@@ -1,16 +1,23 @@
-var account = {
-    balance: 0
+var accounts = [];
+
+var createAccount = function(username, balance){
+    var account = {
+        username: username,
+        balance: balance
+    }
+    accounts.push(account);
 };
 
+var getAccount = function(username){
+    var find;
+    accounts.forEach(function(current, index){
+        if(current.username === username){
+            find = current;
+        } 
+    });
+    return find;
+};
 
-var greetUser = function(name){
-    if(typeof name === 'undefined'){
-        console.log('Hello World!');
-    } else {
-        console.log('Hello' + name + '!');
-    }
-}
-//deposit
 var deposit = function (acc, amount){
     acc.balance += amount;
 };
@@ -24,11 +31,13 @@ var withdraw = function (acc, amount){
 var getBalance = function (acc){
     return acc.balance;
 };
-/*
-deposit(account, 1000);
-console.log(getBalance(account));
-withdraw(account, 121);
-console.log(getBalance(account)); */
+
+
+createAccount('ori', 33);
+createAccount('diaz', 500);
+console.log(getAccount('ori'));
+//deposit
+
 
 var flipper = function(val){
   if(typeof(val)=== "number"){
@@ -38,4 +47,4 @@ var flipper = function(val){
   }
 };
 
-console.log(flipper(1));
+
