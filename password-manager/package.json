@@ -10,6 +10,7 @@
   "author": "Orielsy Diaz",
   "license": "ISC",
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "node-persist": "0.0.6"
   }
 }
